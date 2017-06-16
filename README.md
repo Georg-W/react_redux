@@ -1,16 +1,34 @@
-Troubleshooting for Otten:
-if after npm install & npm start a message like: "module react-router-dom" is not installed -> npm install react-router-dom
+GET STARTED
 
-For some reason sometimes not all required packages get installed.
+Start React App
+npm install
+npm start
 
-Same for Loopback!
+To start the LoopBack API
 cd api
 npm install
 npm start
 
+Troubleshooting for Otten:
+if after npm install & npm start a message like: "module react-router-dom" is not installed -> npm install react-router-dom
+For some reason sometimes not all required packages get installed.
+
+
+Troubleshooting for Loopback:
 if: modules missing install missing packages manually (see above)
 
-npm start -> should run fine
+After that -> npm start -> should run fine
+
+MAKE SURE to have both the react app and the loopback API running!! (2 seperate consoles)
+
+
+LOOPBACK Explorer
+
+http://localhost:9000/explorer/
+Explore the api and create some Otten for testing under post /otten after starting the api with npm start
+
+
+
 
 
 
