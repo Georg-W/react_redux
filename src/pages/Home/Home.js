@@ -18,29 +18,30 @@ class Home extends Component {
   }
 
   loadOtten() {
-    fetch('http://localhost:3000/api/grills/')
+    fetch('http://localhost:9000/api/otten/')
       .then((response) => response.json())
-      .then((data) => setTimeout(() => store.dispatch({
-        type: 'GRILLS_LOADED',
+      .then((data) => setTimeout(() => console.log(data),store.dispatch({
+        type: 'OTTEN_LOADED',
         data: data
       }), 500));
   }
 
   render() {
-    const { grills } = this.props;
+    console.log(this.props);
 
+    const { otten } = this.props;
     return (
       <Jumbotron>
         <h1>Welcome to Uberbecue!</h1>
-        <p>There are <strong>{ grills.length }</strong> Otten in our database.</p>
-        <p><Link to="/grills" className="btn btn-primary">To the otten!</Link></p>
+        <p>There are <strong>{ otten.length }</strong> Otten in our database.</p>
+        <p><Link to="/otten" className="btn btn-primary">To the otten!</Link></p>
       </Jumbotron>
     );
   }
 }
 
 const mapStateToProps = (store) => ({
-  grills: store.grills
+  otten: store.otten
 });
 
 export default connect(mapStateToProps)(Home);

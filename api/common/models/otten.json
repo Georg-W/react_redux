@@ -1,0 +1,32 @@
+{
+  "name": "otten",
+  "plural": "otten",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "default": "Otte"
+    },
+    "race": {
+      "type": "string",
+      "required": true,
+      "default": "Standard Otten"
+    },
+    "image": {
+      "type": "string"
+    },
+    "age": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -4,14 +4,14 @@ const initialState = {
   grills: []
 };
 
-const grillReducer = function(state = initialState, action) {
+const ottenReducer = function(state = initialState, action) {
   console.log("Wir haben folgende Action getriggert:", action.type, action);
   switch (action.type) {
 
-    case 'GRILLS_LOADED':
+    case 'OTTEN_LOADED':
       return {
         ...state,
-        grills: action.data
+        otten: action.data
       };
 
     default:
@@ -19,6 +19,6 @@ const grillReducer = function(state = initialState, action) {
   }
 };
 
-const store = createStore(grillReducer);
+const store = createStore(ottenReducer);
 
 export default store;

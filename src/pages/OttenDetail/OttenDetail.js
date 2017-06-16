@@ -17,7 +17,7 @@ class OttenDetail extends Component {
   loadOtten() {
     const { match } = this.props;
     const ottenId = match.params.ottenId;
-    fetch('http://localhost:3000/api/grills/' + ottenId)
+    fetch('http://localhost:9000/api/otten/' + ottenId)
       .then((response) => response.json())
       .then((data) => this.setState({ otten:data }));
   }

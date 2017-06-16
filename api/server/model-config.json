@@ -41,5 +41,9 @@
   "model": {
     "dataSource": "db",
     "public": true
+  },
+  "otten": {
+    "dataSource": "db",
+    "public": true
   }
 }
