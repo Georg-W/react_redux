@@ -5,7 +5,7 @@ import { Table } from 'react-bootstrap';
 class TableOfOtten extends Component {
 
   static defaultProps = {
-    grills: []
+    otten: []
   };
 
   render() {
@@ -18,7 +18,7 @@ class TableOfOtten extends Component {
           <th>#</th>
           <th>First Name</th>
           <th>Last Name</th>
-          <th>Username</th>
+          <th>race</th>
         </tr>
         </thead>
         <tbody>
@@ -26,7 +26,7 @@ class TableOfOtten extends Component {
           <tr key={ otten.id }>
             <td>{ otten.id }</td>
             <td>{ otten.name }</td>
-            <td>{ otten.location.lat }, { otten.location.lng }</td>
+            <td>{ otten.race }</td>
             <td><Link to={ `/otten/${otten.id}` } className="btn btn-info">Show</Link></td>
           </tr>
         )) }

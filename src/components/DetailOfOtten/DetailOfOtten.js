@@ -6,9 +6,10 @@ class DetailOfOtten extends Component {
     const { otten } = this.props;
 
     return (
+      console.log(otten),
       <div>
         <h2>Name { otten.name }</h2>
-        <p>Location { otten.location.lat }, { otten.location.lng }</p>
+        <p>race { otten.race }</p>
       </div>
     );
   }

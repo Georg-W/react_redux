@@ -24,7 +24,7 @@ class App extends Component {
           <Layout>
             <Route exact path="/" component={Home} />
             <Route exact path="/otten" component={OttenList} />
-            <Route exact path="/otte/:otteId" component={OttenDetail} />
+            <Route exact path="/otten/:otteId" component={OttenDetail} />
           </Layout>
         </Router>
       </Provider>
