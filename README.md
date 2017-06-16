@@ -1,3 +1,27 @@
+Troubleshooting for Otten:
+if after npm install & npm start a message like: "module react-router-dom" is not installed -> npm install react-router-dom
+
+For some reason sometimes not all required packages get installed.
+
+Same for Loopback!
+cd api
+npm install
+npm start
+
+if: modules missing install missing packages manually (see above)
+
+npm start -> should run fine
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
