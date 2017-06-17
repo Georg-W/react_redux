@@ -10,32 +10,29 @@ class Payment extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      basket_price: null
+    };
+    console.log("price"+ store.getState().basket_price);
+    store.subscribe(() => {
+      // When state will be updated(in our case, when items will be fetched), we will update local component state and force component to rerender with new data.
+      console.log("changed state");
+      this.setState({
+        basket_price: store.getState().basket_price
+      })
+    });
   }
 
   render() {
-    const { otten } = this.props;
-    if(otten){
       return (
         <Jumbotron>
           <p><Link to="/otten" className="btn btn-primary">Take me back!</Link></p>
           <h1>Payment Summary</h1>
-          <p>13,42$</p>
+          <p>{this.state.basket_price} $</p>
           <p><Button className="btn btn-primary">Complete Payment with PayPal</Button></p>
-
         </Jumbotron>
       );
-    }
-    else{
-      return(
-        <p>loading...</p>
-      )
-    }
-
   }
 }
 
-const mapStateToProps = (store) => ({
-  otten: store.otten
-});
-
-export default connect(mapStateToProps)(Payment);
+export default Payment;

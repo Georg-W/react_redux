@@ -11,10 +11,11 @@ class Basket extends Component {
   constructor(props) {
     super(props);
     console.log(props);
-    this.state = {
-      basketOtten: []
-    };
     this.loadBasketOtten = this.loadBasketOtten.bind(this);
+    this.state = {
+      basketOtten: [],
+      price: []
+    };
   }
 
   componentWillMount() {
@@ -25,16 +26,19 @@ class Basket extends Component {
     for (let item in this.props.otten_basket) {
       fetch('http://localhost:9000/api/otten/' + this.props.otten_basket[item])
         .then((response) => response.json())
-        .then((data) => this.setState({
+        .then((data) => {this.setState({
             basketOtten: [
               ...this.state.basketOtten,
               data
-            ]
-          })
+            ],
+            price: this.state.price += data.price
+          }),store.dispatch({
+            type: 'BASKET_PRICE',
+            data: data.price
+          }) }
         );
     }
   }
-
 
   render() {
     const {otten_basket} = this.props;

@@ -8,7 +8,6 @@ import logo from '../../logo.svg';
 class Layout extends Component {
 
   constructor(props) {
-    console.log(props);
     super(props);
     this.state = {
       otten_basket: null

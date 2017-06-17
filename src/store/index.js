@@ -2,7 +2,8 @@ import { createStore } from 'redux';
 
 const initialState = {
   otten: [],
-  otten_basket: []
+  otten_basket: [],
+  basket_price: 0
 };
 
 const ottenReducer = function(state = initialState, action) {
@@ -23,6 +24,13 @@ const ottenReducer = function(state = initialState, action) {
           ...state.otten_basket,
           action.data
         ]
+      };
+
+    case 'BASKET_PRICE':
+      console.log(state);
+      return {
+        ...state,
+        basket_price: state.basket_price += action.data
       };
 
     default:
