@@ -27,8 +27,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log(this.props);
-
     const { otten } = this.props;
     if(otten){
       return (

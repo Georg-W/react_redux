@@ -16,9 +16,13 @@ const ottenReducer = function(state = initialState, action) {
       };
 
     case 'OTTEN_IN_BASKET':
+      console.log(state);
       return {
         ...state,
-        otten_basket: action.data
+        otten_basket: [
+          ...state.otten_basket,
+          action.data
+        ]
       };
 
     default:
