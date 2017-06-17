@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Jumbotron } from 'react-bootstrap';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import {Jumbotron} from 'react-bootstrap';
+import {connect} from 'react-redux';
 import TableOfOtten from '../../components/TableOfOtten/TableOfOtten';
 
 import store from '../../store';
@@ -23,14 +23,16 @@ class Basket extends Component {
   }
 
   loadBasketOtten() {
-    for(let item in this.props.otten_basket){
-      console.log(item);
-      fetch('http://localhost:9000/api/otten/'+item)
+    for (let item in this.props.otten_basket) {
+      console.log(this.props.otten_basket[item]);
+      fetch('http://localhost:9000/api/otten/' + this.props.otten_basket[item])
         .then((response) => response.json())
-        .then((data) => this.state.basketOtten = [
-            ...this.state.basketOtten,
-            data
-          ], console.log(this.state.basketOtten)
+        .then((data) => this.setState({
+            basketOtten: [
+              ...this.state.basketOtten,
+              data
+            ]
+          })
         );
       console.log(this.state.basketOtten)
     }
@@ -38,19 +40,19 @@ class Basket extends Component {
 
 
   render() {
-    const { otten_basket } = this.props;
-    if(otten_basket && this.state.basketOtten){
+    const {otten_basket} = this.props;
+    if (otten_basket && this.state.basketOtten) {
       console.log(otten_basket);
       return (
         <Jumbotron>
           <h1>Welcome to Uberbecue!</h1>
           <p>There are <strong>{ otten_basket.length }</strong> Otten in our basket.</p>
-          <TableOfOtten otten={ this.state.basketOtten } />
+          <TableOfOtten otten={ this.state.basketOtten } fromBasket = {true}/>
         </Jumbotron>
       );
     }
-    else{
-      return(
+    else {
+      return (
         <p>loading...</p>
       )
     }

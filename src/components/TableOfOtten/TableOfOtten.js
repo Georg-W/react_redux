@@ -34,8 +34,9 @@ class TableOfOtten extends Component {
           <th>#</th>
           <th>First Name</th>
           <th>race</th>
+          <th>age</th>
           <th>Details</th>
-          <th>Add</th>
+          {this.props.fromBasket===false?<th>Add</th>:null}
         </tr>
         </thead>
         <tbody>
@@ -44,8 +45,9 @@ class TableOfOtten extends Component {
             <td>{ otten.id }</td>
             <td>{ otten.name }</td>
             <td>{ otten.race }</td>
+            <td>{ otten.age }</td>
             <td><Link to={ `/otten/${otten.id}` } className="btn btn-info">Show</Link></td>
-            <td><Button onClick={() => this.addToBasket(otten.id)} className="btn btn-info">Add to Basket</Button></td>
+            {this.props.fromBasket===false?<td><Button onClick={() => this.addToBasket(otten.id)} className="btn btn-info">Add to Basket</Button></td>:null}
           </tr>
         )) }
         </tbody>

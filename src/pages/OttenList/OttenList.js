@@ -11,7 +11,7 @@ class OttenList extends Component {
     return (
       <div>
         <h1>Available Otten</h1>
-        <TableOfOtten otten={ otten } />
+        <TableOfOtten otten={ otten } fromBasket = {false} />
       </div>
     );
   }
