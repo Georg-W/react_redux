@@ -21,7 +21,6 @@ After that -> npm start -> should run fine
 
 MAKE SURE to have both the react app and the loopback API running!! (2 seperate consoles)
 
-
 LOOPBACK Explorer
 
 http://localhost:9000/explorer/

@@ -8,6 +8,8 @@ import store from './store';
 import Layout from './components/Layout/Layout';
 
 import Home from './pages/Home/Home';
+import Basket from './pages/Basket/Basket';
+import Payment from './pages/Payment/Payment';
 import OttenList from './pages/OttenList/OttenList';
 import OttenDetail from './pages/OttenDetail/OttenDetail';
 
@@ -24,7 +26,9 @@ class App extends Component {
           <Layout>
             <Route exact path="/" component={Home} />
             <Route exact path="/otten" component={OttenList} />
-            <Route exact path="/otten/:otteId" component={OttenDetail} />
+            <Route exact path="/otten/:otteId" component={OttenDetail}/>
+            <Route exact path="/payment" component={Payment}/>
+            <Route exact path="/basket" component={Basket} />
           </Layout>
         </Router>
       </Provider>
