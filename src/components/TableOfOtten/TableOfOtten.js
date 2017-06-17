@@ -32,10 +32,11 @@ class TableOfOtten extends Component {
         <thead>
         <tr>
           <th>#</th>
-          <th>First Name</th>
+          <th>name</th>
           <th>race</th>
           <th>age</th>
-          <th>Details</th>
+          <th>price</th>
+          <th>details</th>
           {this.props.fromBasket===false?<th>Add</th>:null}
         </tr>
         </thead>
@@ -46,6 +47,7 @@ class TableOfOtten extends Component {
             <td>{ otten.name }</td>
             <td>{ otten.race }</td>
             <td>{ otten.age }</td>
+            <td>{ otten.price }</td>
             <td><Link to={ `/otten/${otten.id}` } className="btn btn-info">Show</Link></td>
             {this.props.fromBasket===false?<td><Button onClick={() => this.addToBasket(otten.id)} className="btn btn-info">Add to Basket</Button></td>:null}
           </tr>

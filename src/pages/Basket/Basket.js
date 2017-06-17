@@ -19,12 +19,10 @@ class Basket extends Component {
 
   componentWillMount() {
     this.loadBasketOtten();
-    console.log("loaded basket otten")
   }
 
   loadBasketOtten() {
     for (let item in this.props.otten_basket) {
-      console.log(this.props.otten_basket[item]);
       fetch('http://localhost:9000/api/otten/' + this.props.otten_basket[item])
         .then((response) => response.json())
         .then((data) => this.setState({
@@ -34,7 +32,6 @@ class Basket extends Component {
             ]
           })
         );
-      console.log(this.state.basketOtten)
     }
   }
 
@@ -42,12 +39,12 @@ class Basket extends Component {
   render() {
     const {otten_basket} = this.props;
     if (otten_basket && this.state.basketOtten) {
-      console.log(otten_basket);
       return (
         <Jumbotron>
           <h1>Welcome to Uberbecue!</h1>
           <p>There are <strong>{ otten_basket.length }</strong> Otten in our basket.</p>
           <TableOfOtten otten={ this.state.basketOtten } fromBasket = {true}/>
+          <Link to="/payment" className="btn btn-primary">Complete Payment</Link>
         </Jumbotron>
       );
     }
