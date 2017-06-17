@@ -1,7 +1,8 @@
 import { createStore } from 'redux';
 
 const initialState = {
-  grills: []
+  otten: [],
+  otten_basket: []
 };
 
 const ottenReducer = function(state = initialState, action) {
@@ -12,6 +13,12 @@ const ottenReducer = function(state = initialState, action) {
       return {
         ...state,
         otten: action.data
+      };
+
+    case 'OTTEN_IN_BASKET':
+      return {
+        ...state,
+        otten_basket: action.data
       };
 
     default:
