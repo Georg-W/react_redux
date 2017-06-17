@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Jumbotron } from 'react-bootstrap';
-
 import { connect } from 'react-redux';
+import TableOfOtten from '../../components/TableOfOtten/TableOfOtten';
 
 import store from '../../store';
 
@@ -10,32 +10,42 @@ class Basket extends Component {
 
   constructor(props) {
     super(props);
-    this.loadOtten = this.loadOtten.bind(this);
+    console.log(props);
+    this.state = {
+      basketOtten: []
+    };
+    this.loadBasketOtten = this.loadBasketOtten.bind(this);
   }
 
   componentWillMount() {
-    this.loadOtten();
+    this.loadBasketOtten();
+    console.log("loaded basket otten")
   }
 
-  loadOtten() {
-    fetch('http://localhost:9000/api/otten/')
-      .then((response) => response.json())
-      .then((data) => store.dispatch({
-        type: 'OTTEN_LOADED',
-        data: data
-      }));
+  loadBasketOtten() {
+    for(let item in this.props.otten_basket){
+      console.log(item);
+      fetch('http://localhost:9000/api/otten/'+item)
+        .then((response) => response.json())
+        .then((data) => this.state.basketOtten = [
+            ...this.state.basketOtten,
+            data
+          ], console.log(this.state.basketOtten)
+        );
+      console.log(this.state.basketOtten)
+    }
   }
+
 
   render() {
-    console.log(this.props);
-
-    const { otten } = this.props;
-    if(otten){
+    const { otten_basket } = this.props;
+    if(otten_basket && this.state.basketOtten){
+      console.log(otten_basket);
       return (
         <Jumbotron>
           <h1>Welcome to Uberbecue!</h1>
-          <p>There are <strong>{ otten.length }</strong> Otten in our database.</p>
-          <p><Link to="/otten" className="btn btn-primary">To the otten!</Link></p>
+          <p>There are <strong>{ otten_basket.length }</strong> Otten in our basket.</p>
+          <TableOfOtten otten={ this.state.basketOtten } />
         </Jumbotron>
       );
     }
@@ -49,7 +59,7 @@ class Basket extends Component {
 }
 
 const mapStateToProps = (store) => ({
-  otten: store.otten
+  otten_basket: store.otten_basket
 });
 
 export default connect(mapStateToProps)(Basket);

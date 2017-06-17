@@ -15,6 +15,7 @@ class Home extends Component {
 
   componentWillMount() {
     this.loadOtten();
+    console.log("loaded otten")
   }
 
   loadOtten() {
