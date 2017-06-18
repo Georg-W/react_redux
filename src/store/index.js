@@ -6,6 +6,20 @@ const initialState = {
   basket_price: 0
 };
 
+let removeByAttr = function(arr, attr, value){
+  let i = arr.length;
+  while(i--){
+    if( arr[i]
+      && arr[i].hasOwnProperty(attr)
+      && (arguments.length > 2 && arr[i][attr] === value ) ){
+
+      arr.splice(i,1);
+
+    }
+  }
+  return arr;
+};
+
 const ottenReducer = function(state = initialState, action) {
   console.log("Wir haben folgende Action getriggert:", action.type, action);
   switch (action.type) {
@@ -32,6 +46,13 @@ const ottenReducer = function(state = initialState, action) {
         ...state,
         basket_price: state.basket_price += action.data
       };
+
+    case 'DELETE_OTTEN':
+      console.log(state);
+      return {
+        ...state,
+        otten: removeByAttr(state.otten, 'id', action.data)
+  };
 
     default:
       return state;

@@ -24,6 +24,20 @@ class TableOfOtten extends Component {
     });
   }
 
+  deleteOtten(id){
+    console.log("deleted otten "+id);
+    fetch('http://localhost:9000/api/otten/'+id, {
+      method: 'DELETE',
+      body: id
+    })
+      .then(store.dispatch({
+        type:'DELETE_OTTEN',
+        data:id
+      }));
+
+
+  }
+
   render() {
     const { otten } = this.props;
 
@@ -50,6 +64,7 @@ class TableOfOtten extends Component {
             <td>{ otten.price }</td>
             <td><Link to={ `/otten/${otten.id}` } className="btn btn-info">Show</Link></td>
             {this.props.fromBasket===false?<td><Button onClick={() => this.addToBasket(otten.id)} className="btn btn-info">Add to Basket</Button></td>:null}
+            <td><Button bsStyle="danger" onClick={() => this.deleteOtten(otten.id)}>Delete</Button></td>
           </tr>
         )) }
         </tbody>
