@@ -35,13 +35,6 @@
     "dataSource": "db",
     "public": false
   },
-  "Message": {
-    "dataSource": null
-  },
-  "model": {
-    "dataSource": "db",
-    "public": true
-  },
   "otten": {
     "dataSource": "db",
     "public": true

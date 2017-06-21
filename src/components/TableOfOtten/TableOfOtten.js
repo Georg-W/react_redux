@@ -25,17 +25,30 @@ class TableOfOtten extends Component {
   }
 
   deleteOtten(id){
-    console.log("deleted otten "+id);
-    fetch('http://localhost:9000/api/otten/'+id, {
-      method: 'DELETE',
-      body: id
-    })
-      .then(store.dispatch({
-        type:'DELETE_OTTEN',
+    console.log("delete triggered");
+    if(!this.props.fromBasket){
+      fetch('http://localhost:9000/api/otten/'+id, {
+        method: 'DELETE',
+        body: id
+      })
+        .then(store.dispatch({
+          type:'DELETE_OTTEN',
+          data:id
+        }));
+      console.log("deleted otten "+id);
+    }
+    else{
+      let data = String(id);
+      console.log(data);
+      console.log(store.getState());
+      store.dispatch({
+        type: 'REMOVE_OTTEN_FROM_BASKET',
         data:id
-      }));
+      });
+      console.log("removed from basket");
+      console.log(store.getState())
 
-
+    }
   }
 
   render() {

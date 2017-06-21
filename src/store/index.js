@@ -22,6 +22,7 @@ let removeByAttr = function(arr, attr, value){
 
 const ottenReducer = function(state = initialState, action) {
   console.log("Wir haben folgende Action getriggert:", action.type, action);
+  console.log("in reducer");
   switch (action.type) {
 
     case 'OTTEN_LOADED':
@@ -38,6 +39,14 @@ const ottenReducer = function(state = initialState, action) {
           ...state.otten_basket,
           action.data
         ]
+      };
+
+    case 'REMOVE_OTTEN_FROM_BASKET':
+      console.log(state);
+      console.log("heyy");
+      return {
+        ...state,
+        otten_basket: state.otten_basket.splice(action.data)
       };
 
     case 'BASKET_PRICE':
