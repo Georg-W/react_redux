@@ -1,13 +1,13 @@
 GET STARTED
 
-Start React App
-npm install
-npm start
+Start React App<br>
+npm install<br>
+npm start <br>
 
-To start the LoopBack API
-cd api
-npm install
-npm start
+To start the LoopBack API<br>
+cd api<br>
+npm install<br>
+npm start<br>
 
 Troubleshooting for Otten:
 if after npm install & npm start a message like: "module react-router-dom" is not installed -> npm install react-router-dom
