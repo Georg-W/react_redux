@@ -36,6 +36,9 @@ class Layout extends Component {
               <p>{this.state.otten_basket ? this.state.otten_basket.length : 0}</p>
               <Button className="info">Basket</Button>
             </Link>
+            <Link to="/addOtte">
+              <Button className="info">Add Otte</Button>
+            </Link>
           </ButtonToolbar>
         </div>
         <div>
