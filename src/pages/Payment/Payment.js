@@ -11,16 +11,9 @@ class Payment extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      basket_price: null
+      basket_price: store.getState().basket_price
     };
     console.log("price"+ store.getState().basket_price);
-    store.subscribe(() => {
-      // When state will be updated(in our case, when items will be fetched), we will update local component state and force component to rerender with new data.
-      console.log("changed state");
-      this.setState({
-        basket_price: store.getState().basket_price
-      })
-    });
   }
 
   render() {

@@ -43,7 +43,8 @@ const ottenReducer = function(state = initialState, action) {
 
     case 'REMOVE_OTTEN_FROM_BASKET':
       console.log(state);
-      console.log("heyy");
+      console.log(action.data);
+      console.log("remove basket");
       return {
         ...state,
         otten_basket: state.otten_basket.splice(action.data)

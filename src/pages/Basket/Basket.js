@@ -17,8 +17,10 @@ class Basket extends Component {
       basketOtten: store.getState().otten_basket,
       price: 0
     };
+  }
 
-    store.subscribe(() => {
+  componentDidMount() {
+    this.unsubscribe = store.subscribe(() => {
       // When state will be updated(in our case, when items will be fetched), we will update local component state and force component to rerender with new data.
       console.log("changed basket state");
       this.state.basketOtten = store.getState().otten_basket;
@@ -27,6 +29,10 @@ class Basket extends Component {
       });
     });
   }
+
+    componentWillUnmount() {
+      this.unsubscribe();
+    }
 
   render() {
     if (this.state.basketOtten) {

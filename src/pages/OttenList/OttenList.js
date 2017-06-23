@@ -13,12 +13,21 @@ class OttenList extends Component {
     this.state = {
       otten: store.getState().otten
     };
-    store.subscribe(() => {
+
+  }
+
+  componentDidMount(){
+    this.unsubscribe = store.subscribe(() => {
       // When state will be updated(in our case, when items will be fetched), we will update local component state and force component to rerender with new data.
-      console.log("changed state");
-      this.state.otten = store.getState().otten;
-        this.setState({})
+      console.log("changed ottenlist");
+      setTimeout(this.setState({
+        otten: store.getState().otten
+      }), 0)
     });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
   }
 
   render() {
