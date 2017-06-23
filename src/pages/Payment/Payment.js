@@ -22,7 +22,7 @@ class Payment extends Component {
           <p><Link to="/otten" className="btn btn-primary">Take me back!</Link></p>
           <h1>Payment Summary</h1>
           <p>{this.state.basket_price} $</p>
-          <p><Button className="btn btn-primary">Complete Payment with PayPal</Button></p>
+          <p><Link to="/success" className="btn btn-primary">Complete Payment with PayPal</Link></p>
         </Jumbotron>
       );
   }

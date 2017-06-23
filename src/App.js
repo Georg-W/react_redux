@@ -13,6 +13,7 @@ import Payment from './pages/Payment/Payment';
 import OttenList from './pages/OttenList/OttenList';
 import OttenDetail from './pages/OttenDetail/OttenDetail';
 import AddOtte from './pages/AddOtte/AddOtte';
+import PaymentSuccess from './pages/PaymentSuccess/PaymentSuccess';
 
 import './App.css';
 
@@ -29,6 +30,7 @@ class App extends Component {
             <Route exact path="/otten" component={OttenList} />
             <Route exact path="/otten/:otteId" component={OttenDetail}/>
             <Route exact path="/payment" component={Payment}/>
+            <Route exact path="/success" component={PaymentSuccess} />
             <Route exact path="/basket" component={Basket} />
             <Route exact path="/addOtte" component={AddOtte} />
           </Layout>
