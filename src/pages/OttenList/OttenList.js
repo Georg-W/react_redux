@@ -32,8 +32,4 @@ class OttenList extends Component {
   }
 }
 
-const mapStateToProps = (store) => ({
-  otten: store.otten
-});
-
-export default connect(mapStateToProps)(OttenList);
+export default OttenList;

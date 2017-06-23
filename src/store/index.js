@@ -56,6 +56,13 @@ const ottenReducer = function(state = initialState, action) {
         basket_price: state.basket_price += action.data
       };
 
+    case 'DELETE_BASKET_PRICE':
+      console.log(state);
+      return {
+        ...state,
+        basket_price: state.basket_price = state.basket_price - action.data
+      };
+
     case 'DELETE_OTTEN':
       console.log(state);
       return {
