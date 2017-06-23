@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import {Jumbotron} from 'react-bootstrap';
+import {Jumbotron, Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import TableOfOtten from '../../components/TableOfOtten/TableOfOtten';
 
@@ -39,6 +39,11 @@ class Basket extends Component {
       console.log(this.state.basketOtten);
       return (
         <Jumbotron>
+          <Button
+            className="button icon-left"
+            onClick={() => this.props.history.goBack()}>
+            Back
+          </Button>
           <h1>Welcome to UberOtten!</h1>
           <p>There are <strong>{ this.state.basketOtten.length }</strong> Otten in our basket.</p>
           <TableOfOtten otten={ this.state.basketOtten } fromBasket={true}/>

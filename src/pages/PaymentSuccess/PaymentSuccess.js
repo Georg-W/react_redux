@@ -32,7 +32,13 @@ class PaymentSuccess extends Component {
 
   render() {
     return (
+      console.log(this.props),
       <div>
+        <Button
+          className="button icon-left"
+          onClick={() => this.props.history.goBack()}>
+          Back
+        </Button>
         <h1>Your Payment was successfull!</h1>
         <h1>Thank you for choosing UberOtten</h1>
         <h2>Your Otten will arrive in: </h2>
