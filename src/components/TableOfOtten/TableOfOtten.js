@@ -33,7 +33,7 @@ class TableOfOtten extends Component {
   deleteOtten(otte){
     console.log("delete triggered");
     if(!this.props.fromBasket){
-      fetch('http://localhost:9000/api/otten/'+id, {
+      fetch('http://localhost:9000/api/otten/'+otte.id, {
         method: 'DELETE',
         body: otte.id
       })
@@ -41,7 +41,7 @@ class TableOfOtten extends Component {
           type:'DELETE_OTTEN',
           data:otte.id
         }));
-      console.log("deleted otten "+id);
+      console.log("deleted otten "+otte.id);
     }
     else{
       store.dispatch({
