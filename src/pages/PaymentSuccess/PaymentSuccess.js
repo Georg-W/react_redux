@@ -1,9 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import {Jumbotron, Button} from 'react-bootstrap';
-import {connect} from 'react-redux';
-
-import store from '../../store';
+import {Button} from 'react-bootstrap';
 
 class PaymentSuccess extends Component {
 

@@ -49,13 +49,4 @@ class Layout extends Component {
   }
 }
 
-const mapStateToProps = function (store) {
-  console.log("triggered layout");
-  console.log(store.otten_basket);
-
-  return {
-    otten_basket: store.otten_basket
-  };
-};
-
 export default Layout;

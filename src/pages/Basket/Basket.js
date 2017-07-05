@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {Jumbotron, Button} from 'react-bootstrap';
-import {connect} from 'react-redux';
 import TableOfOtten from '../../components/TableOfOtten/TableOfOtten';
 
 import store from '../../store';
@@ -24,7 +23,6 @@ class Basket extends Component {
     this.unsubscribe = store.subscribe(() => {
       // When state will be updated(in our case, when items will be fetched), we will update local component state and force component to rerender with new data.
       console.log("changed basket state");
-      this.state.basketOtten = store.getState().otten_basket;
       this.setState({
         basketOtten: store.getState().otten_basket
       });
