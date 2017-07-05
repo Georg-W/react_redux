@@ -11,6 +11,7 @@ class Basket extends Component {
   constructor(props) {
     super(props);
     console.log(props);
+    console.log("otten4life");
     console.log(store.getState().otten_basket);
     console.log(store.getState().basket_price);
     this.state = {
