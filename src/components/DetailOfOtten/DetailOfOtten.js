@@ -1,15 +1,30 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+
+import {Table} from 'react-bootstrap';
+
 
 class DetailOfOtten extends Component {
 
   render() {
-    const { otten } = this.props;
+    const {otten} = this.props;
 
     return (
-      console.log(otten),
       <div>
-        <h2>Name { otten.name }</h2>
-        <p>race { otten.race }</p>
+        <br/><br/>
+        <Table striped bordered hover md={6}>
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Rasse</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{otten.name}</td>
+            <td>{otten.race}</td>
+          </tr>
+          </tbody>
+        </Table>
       </div>
     );
   }

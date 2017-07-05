@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import {Button, ButtonToolbar} from 'react-bootstrap';
+import {Button, ButtonToolbar, Col, PageHeader} from 'react-bootstrap';
 import store from '../../store';
-
-import logo from '../../logo.svg';
 
 class Layout extends Component {
 
@@ -22,24 +20,26 @@ class Layout extends Component {
   }
 
   render() {
-    console.log(this.props);
-
     return (
       <div className="App">
-        <div className="App-header">
-          <Link to="/">
-            <img src={logo} className="App-logo" alt="logo"/>
-          </Link>
-          <h2>OttenUber</h2>
-          <ButtonToolbar>
-            <Link to="/basket">
-              <p>{this.state.otten_basket ? this.state.otten_basket.length : 0}</p>
-              <Button className="info">Basket</Button>
+        <div className="App-header" style={{height: 200}}>
+          <div>
+            <Link to="/" md={6}>
+              <Col>
+                <PageHeader>OttenUber</PageHeader>
+              </Col>
             </Link>
-            <Link to="/addOtte">
-              <Button className="info">Add Otte</Button>
-            </Link>
-          </ButtonToolbar>
+            <Col>
+              <ButtonToolbar>
+                <Link to="/basket">
+                  <Button className="info">{this.state.otten_basket ? this.state.otten_basket.length : 0} Otten ausgewählt</Button>
+                </Link>
+                <Link to="/addOtte">
+                  <Button className="info">Neuen Otten anbieten</Button>
+                </Link>
+              </ButtonToolbar>
+            </Col>
+          </div>
         </div>
         <div>
           { this.props.children }

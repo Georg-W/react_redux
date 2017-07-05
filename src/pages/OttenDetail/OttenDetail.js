@@ -29,8 +29,7 @@ class OttenDetail extends Component {
     if(otten){
       return (
         <div>
-          <h1>Otten</h1>
-          { otten && <DetailOfOtten otten={ otten } /> }
+          <DetailOfOtten otten={ otten } />
         </div>
       );
     }

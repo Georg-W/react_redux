@@ -32,9 +32,9 @@ class Home extends Component {
     if(otten){
       return (
         <Jumbotron>
-          <h1>Welcome to Uberbecue!</h1>
-          <p>There are <strong>{ otten.length }</strong> Otten in our database.</p>
-          <p><Link to="/otten" className="btn btn-primary">To the otten!</Link></p>
+          <h1>Willkommen bei OttenUber!</h1>
+          <p>Momentan befinden sich <strong>{ otten.length }</strong> Otten im Angebot.</p>
+          <p><Link to="/otten" className="btn btn-primary">Auf zu den Otten!</Link></p>
         </Jumbotron>
       );
     }
