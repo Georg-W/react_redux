@@ -24,7 +24,7 @@ class Layout extends Component {
       <div className="App">
         <div className="App-header" style={{height: 200}}>
           <div>
-            <Link to="/" md={6}>
+            <Link to="/">
               <Col>
                 <PageHeader>OttenUber</PageHeader>
               </Col>
