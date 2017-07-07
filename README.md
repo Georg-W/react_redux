@@ -1,4 +1,8 @@
-GET STARTED
+Dokumentation of our  React Redux:
+
+Authors: Georg Westner, Julian Wolf, Michael Bredehorn
+
+Follow the steps
 
 Start React App<br>
 npm install<br>
