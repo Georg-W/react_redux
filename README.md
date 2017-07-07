@@ -1,4 +1,4 @@
-Dokumentation of our  React Redux:
+<h1>Dokumentation of our  React Redux:</h1>
 
 Authors: Georg Westner, Julian Wolf, Michael Bredehorn
 
