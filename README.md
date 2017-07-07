@@ -1,8 +1,12 @@
-<h1>Dokumentation of our  React Redux:</h1>
+<h1>Dokumentation of our React Redux Project:</h1>
 
-Authors: Georg Westner, Julian Wolf, Michael Bredehorn
+<h2>Authors: Georg Westner, Julian Wolf, Michael Bredehorn</h2>
+<h2>Lector: Anton Mikulcic</h2>
+<h2>Course Name: Web-based Frameworks</h2>
 
-Follow the steps
+<h3>Follow the steps</h3><br>
+
+Type in the following commands:<br>
 
 Start React App<br>
 npm install<br>
